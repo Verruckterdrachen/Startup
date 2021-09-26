@@ -191,7 +191,7 @@ body._lock {
 }
 @media (any-hover: hover) {
   .button_white:hover {
-    color: #555555;
+    color: #111;
     background-color: #fff;
   }
 }
@@ -1523,4 +1523,62 @@ body.ie ._ibg img {
   .block-works__button:hover::before {
     transform: translateX(25%);
   }
+}
+
+.get-in-touch {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  background: url("../img/get-in-touch/cover.jpg") center/cover no-repeat;
+  background-position: 0 73%;
+  position: relative;
+}
+@media (max-width: 1140px) {
+  .get-in-touch {
+    padding-top: calc(40px + 50 * ((100vw - 320px) / 820));
+  }
+}
+@media (max-width: 1140px) {
+  .get-in-touch {
+    padding-bottom: calc(50px + 50 * ((100vw - 320px) / 820));
+  }
+}
+.get-in-touch::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(192, 48, 28, 0.6);
+}
+.get-in-touch__container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+.get-in-touch__container > *:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 767.98px) {
+  .get-in-touch__container {
+    max-width: 454px;
+  }
+}
+.get-in-touch__title {
+  color: #fff;
+  font-family: "Roboto Slab";
+  font-size: 30px;
+  line-height: 146.6666666667%;
+  margin: 0px 0px 1.5em 0px;
+}
+@media (max-width: 1140px) {
+  .get-in-touch__title {
+    font-size: calc(24px + 6 * ((100vw - 320px) / 820));
+  }
+}
+.get-in-touch__title span {
+  text-transform: uppercase;
+}
+.get-in-touch__button {
+  margin: 0px 0px 30px 0px;
 }
