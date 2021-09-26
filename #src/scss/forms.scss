@@ -19,13 +19,30 @@
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 50px;
+	padding: 0px 35px;
 	@media (any-hover: hover) {
 		&:hover {
 		}
 	}
-	&._fw {
-		width: 100%;
+	&_white {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: math.div(24, 16) * 100%;
+		border-radius: 2px;
+		color: #fff;
+		border: 2px solid #fff;
+		text-transform: uppercase;
+		transition: color 0.3s, background-color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $mainColor;
+				background-color: #fff;
+			}
+		}
 	}
 }
 //</BUTTONS>====================================================================================================
