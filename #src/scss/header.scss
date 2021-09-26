@@ -52,7 +52,7 @@
 			right: -100%;
 			overflow: auto;
 			padding: 140px 15px 40px 15px;
-			background-color: #000;
+			background-color: #111;
 			transition: right 0.3s;
 			&::before {
 				content: "";
@@ -61,7 +61,7 @@
 				height: 80px;
 				top: 0;
 				right: -100%;
-				background-color: #000;
+				background-color: #111;
 				transition: right 0.3s;
 				z-index: 5;
 				@media (max-width: $md3+px) {

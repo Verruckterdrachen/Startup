@@ -90,6 +90,8 @@ body {
 	}
 	&__services {
 	}
+	&__about {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -192,6 +194,145 @@ body {
 		font-family: "Roboto Slab";
 		line-height: math.div(24, 14) * 100%;
 		margin: 0px 0px math.div(24, 14) * 1em 0px;
+	}
+}
+//====================================================================================================
+.about {
+	background-color: #f8f8f8;
+	&__head {
+		@include adaptiv-value("margin-bottom", 70, 40, 1);
+	}
+	&__content {
+		display: grid;
+		gap: 30px;
+		@include adaptiv-value("margin-bottom", 70, 40, 1);
+		@media (min-width: $md2+px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	&__text {
+		font-family: "Roboto Slab";
+		line-height: math.div(24, $fontSize) * 100%;
+	}
+}
+.slider-about {
+	position: relative;
+	&__slide {
+		@media (any-hover: hover) {
+			&:hover {
+				.slider-about__overlay {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		@media (any-hover: none) {
+			.slider-about__overlay {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&__image {
+		position: relative;
+		padding: 0px 0px math.div(250, 263.25) * 100% 0px;
+		margin: 0px 0px 15px 0px;
+		img {
+			object-position: top;
+		}
+	}
+	&__overlay {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba($mainColor, 0.5);
+		padding: 0px 0px 32px 0px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s;
+	}
+	&__social {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	&__icon {
+		flex: 0 0 28px;
+		width: 28px;
+		height: 28px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.3s;
+		&:not(:last-child) {
+			margin: 0px 2px 0px 0px;
+		}
+		&::before {
+			color: #fff;
+			font-size: 16px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accentColor;
+			}
+		}
+	}
+	&__info {
+		text-align: center;
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__name {
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: math.div(24, $fontSize) * 100%;
+		margin: 0px 0px math.div(2, $fontSize) * 1em 0px;
+	}
+	&__post {
+		font-family: "Roboto Slab";
+		font-size: 13px;
+		line-height: math.div(24, 13) * 100%;
+		margin: 0px 0px math.div(2, 13) * 1em 0px;
+	}
+	&__arrows {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		top: math.div(106, 312.281) * 100%;
+		@media (max-width: $md2+px) {
+			display: none;
+		}
+	}
+}
+.slider-arrow {
+	flex: 0 0 35px;
+	width: 35px;
+	height: 38px;
+	cursor: pointer;
+	pointer-events: auto;
+	transition: all 0.3s ease 0s;
+	color: #fff;
+	background-color: #8b8b8b;
+	transition: background-color 0.3s;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $accentColor;
+		}
+	}
+	&_prev {
+		&::before {
+			transform: rotate(-180deg);
+		}
 	}
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
