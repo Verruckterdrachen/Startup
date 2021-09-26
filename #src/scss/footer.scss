@@ -1,5 +1,59 @@
-footer {
-}
 //====================================================================================================
-
+.footer {
+	@include adaptiv-value("padding-top", 100, 40, 1);
+	@include adaptiv-value("padding-bottom", 100, 40, 1);
+	background-color: $accentColor;
+	&__social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiv-value("padding-bottom", 30, 15, 1);
+		@include adaptiv-value("margin-bottom", 28, 15, 1);
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 2px;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #fff;
+		}
+	}
+	&__icon {
+		width: 35px;
+		height: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		transition: background-color 0.3s;
+		&:not(:last-child) {
+			margin: 0px 15px 0px 0px;
+		}
+		&::before {
+			color: #fff;
+			font-size: 15px;
+			transition: color 0.3s;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #fff;
+				&::before {
+					color: $accentColor;
+				}
+			}
+		}
+	}
+	&__copy {
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: math.div(20, 12) * 100%;
+		font-family: "Roboto Slab";
+		text-align: center;
+	}
+}
 //====================================================================================================

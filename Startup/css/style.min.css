@@ -2,30 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:regular,700&display=swap");
 @font-face {
-  font-family: "Gilroy-Bold";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy-Medium";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy-SemiBold";
-  font-display: swap;
-  src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"), url("../fonts/Gilroy-SemiBold.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Gilroy-Regular";
-  font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -986,6 +965,84 @@ body.ie ._ibg img {
     transform: rotate(-135deg);
     top: calc(50% - 1px);
   }
+}
+
+.footer {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #c0301c;
+}
+@media (max-width: 1140px) {
+  .footer {
+    padding-top: calc(40px + 60 * ((100vw - 320px) / 820));
+  }
+}
+@media (max-width: 1140px) {
+  .footer {
+    padding-bottom: calc(40px + 60 * ((100vw - 320px) / 820));
+  }
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 30px;
+  margin-bottom: 28px;
+  position: relative;
+}
+@media (max-width: 1140px) {
+  .footer__social {
+    padding-bottom: calc(15px + 15 * ((100vw - 320px) / 820));
+  }
+}
+@media (max-width: 1140px) {
+  .footer__social {
+    margin-bottom: calc(15px + 13 * ((100vw - 320px) / 820));
+  }
+}
+.footer__social::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+.footer__icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: background-color 0.3s;
+}
+.footer__icon:not(:last-child) {
+  margin: 0px 15px 0px 0px;
+}
+.footer__icon::before {
+  color: #fff;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+@media (any-hover: hover) {
+  .footer__icon:hover {
+    background-color: #fff;
+  }
+  .footer__icon:hover::before {
+    color: #c0301c;
+  }
+}
+.footer__copy {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 166.6666666667%;
+  font-family: "Roboto Slab";
+  text-align: center;
 }
 
 .page {
