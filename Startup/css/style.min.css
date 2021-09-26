@@ -1710,3 +1710,96 @@ body.ie ._ibg img {
     width: 100%;
   }
 }
+
+.clients {
+  background-color: #f8f8f8;
+}
+.clients__items {
+  display: grid;
+  align-items: center;
+  margin: 0px auto 60px auto;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 920px) {
+  .clients__items {
+    max-width: 920px;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.clients__item {
+  text-align: center;
+  transition: opacity 0.3s;
+}
+@media (max-width: 920px) {
+  .clients__item:last-child {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 479.98px) {
+  .clients__item:not(:last-child) {
+    grid-column: span 2;
+  }
+}
+@media (any-hover: hover) {
+  .clients__item:hover {
+    opacity: 0.5;
+  }
+}
+
+.slider-clients__body {
+  margin: 0px 0px 40px 0px;
+}
+.slider-clients__slide {
+  text-align: center;
+}
+.slider-clients__slide > *:last-child {
+  margin-bottom: 0;
+}
+.slider-clients__quote {
+  font-family: "Roboto Slab";
+  font-style: italic;
+  font-size: 18px;
+  line-height: 166.6666666667%;
+  margin: 0px 0px 2em 0px;
+}
+@media (min-width: 767.98px) {
+  .slider-clients__quote {
+    padding: 0px 135px;
+  }
+}
+.slider-clients__author {
+  font-family: "Roboto Slab";
+  font-size: 20px;
+  line-height: 150%;
+  margin: 0px 0px 1.5em 0px;
+}
+.slider-clients__bullets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.slider-clients__bullet {
+  flex: 0 0 13px;
+  height: 13px;
+  background-color: #dddddd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease 0s;
+}
+.slider-clients__bullet:not(:last-child) {
+  margin: 0px 7px 0px 0px;
+}
+@media (any-hover: hover) {
+  .slider-clients__bullet:hover {
+    background-color: #c0301c;
+  }
+}
+.slider-clients__bullet_active {
+  background-color: #c0301c;
+}

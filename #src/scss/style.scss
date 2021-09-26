@@ -99,6 +99,8 @@ body {
 	}
 	&__blog {
 	}
+	&__clients {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -618,6 +620,96 @@ body {
 					width: 100%;
 				}
 			}
+		}
+	}
+}
+//====================================================================================================
+.clients {
+	background-color: #f8f8f8;
+	&__items {
+		display: grid;
+		align-items: center;
+		@media (min-width: 920px) {
+			max-width: 920px;
+			gap: 20px;
+			grid-template-columns: repeat(5, 1fr);
+		}
+		margin: 0px auto 60px auto;
+		gap: 30px;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&__item {
+		text-align: center;
+		@media (max-width: 920px) {
+			&:last-child {
+				grid-column: span 2;
+			}
+		}
+		@media (max-width: $md4+px) {
+			&:not(:last-child) {
+				grid-column: span 2;
+			}
+		}
+		transition: opacity 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+.slider-clients {
+	&__body {
+		margin: 0px 0px 40px 0px;
+	}
+	&__slide {
+		text-align: center;
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__quote {
+		font-family: "Roboto Slab";
+		font-style: italic;
+		font-size: 18px;
+		line-height: math.div(30, 18) * 100%;
+		margin: 0px 0px math.div(36, 18) * 1em 0px;
+		@media (min-width: $md3+px) {
+			padding: 0px 135px;
+		}
+	}
+	&__author {
+		font-family: "Roboto Slab";
+		font-size: 20px;
+		line-height: math.div(30, 20) * 100%;
+		margin: 0px 0px math.div(30, 20) * 1em 0px;
+	}
+	&__bullets {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	&__bullet {
+		flex: 0 0 13px;
+		height: 13px;
+		background-color: #dddddd;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		transition: all 0.3s ease 0s;
+		&:not(:last-child) {
+			margin: 0px 7px 0px 0px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $accentColor;
+			}
+		}
+		&_active {
+			background-color: $accentColor;
 		}
 	}
 }
