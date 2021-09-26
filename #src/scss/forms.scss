@@ -24,6 +24,7 @@
 	text-align: center;
 	min-height: 50px;
 	padding: 0px 35px;
+	text-transform: uppercase;
 	&_white {
 		font-weight: 700;
 		font-size: 16px;
@@ -31,12 +32,27 @@
 		border-radius: 2px;
 		color: #fff;
 		border: 2px solid #fff;
-		text-transform: uppercase;
 		transition: color 0.3s, background-color 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
 				color: #111;
 				background-color: #fff;
+			}
+		}
+	}
+	&_outline {
+		font-size: 12px;
+		font-family: "Roboto Slab";
+		line-height: math.div(20, 12) * 100%;
+		padding: 0px 35px;
+		min-height: 44px;
+		border: 1px solid $mainColor;
+		color: $mainColor;
+		transition: color 0.3s, background-color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+				background-color: $mainColor;
 			}
 		}
 	}

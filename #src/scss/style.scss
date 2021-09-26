@@ -101,6 +101,8 @@ body {
 	}
 	&__clients {
 	}
+	&__contacts {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -710,6 +712,124 @@ body {
 		}
 		&_active {
 			background-color: $accentColor;
+		}
+	}
+}
+//====================================================================================================
+.contacts {
+	&__head {
+		@include adaptiv-value("margin-bottom", 70, 40, 1);
+	}
+	&__body {
+		@media (min-width: $md2+px) {
+			display: grid;
+			grid-template-columns: 1fr math.div(730, 1140) * 100%;
+			@include adaptiv-value("column-gap", 150, 0, 1);
+		}
+	}
+	&__info {
+		@media (max-width: $md2+px) {
+			margin: 0px 0px 30px 0px;
+			@media (min-width: 600px) {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 40px;
+			}
+		}
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+	}
+}
+.item-contacts {
+	@media (min-width: $md2+px) {
+		&:not(:last-child) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+	@media (max-width: 600px) {
+		&:not(:last-child) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: math.div(24, $fontSize) * 100%;
+		margin: 0px 0px math.div(5, $fontSize) * 1em 0px;
+		display: flex;
+		align-items: flex-start;
+		&::before {
+			font-size: 16px;
+			line-height: 24px;
+			flex: 0 0 30px;
+		}
+	}
+	&__content {
+		padding: 0px 0px 0px 30px;
+		a,
+		span {
+			display: block;
+			color: inherit;
+			font-size: 12px;
+			line-height: math.div(20, 12) * 100%;
+			margin: 0px 0px math.div(5, 12) * 1em 0px;
+		}
+		a {
+			transition: color 0.3s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accentColor;
+				}
+			}
+		}
+	}
+}
+.form {
+	&__item {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 30px;
+		row-gap: 20px;
+		textarea {
+			grid-column: span 2;
+			resize: none;
+			min-height: 104px;
+		}
+	}
+	&__input {
+		font-size: 12px;
+		font-family: "Roboto Slab";
+		line-height: math.div(20, 12) * 100%;
+		text-transform: uppercase;
+		padding: 15px;
+		border: 1px solid $mainColor;
+		&:focus {
+			color: $accentColor;
+			border: 1px solid $accentColor;
+		}
+		@media (max-width: $md3+px) {
+			grid-column: span 2;
+		}
+	}
+	&__bottom {
+		grid-column: span 2;
+	}
+	&__button {
+		margin: 0px 35px 0px 0px;
+		@media (max-width: $md3+px) {
+			width: 100%;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+	&__desc {
+		display: inline-block;
+		font-size: 12px;
+		font-family: "Roboto Slab";
+		line-height: math.div(20, 12) * 100%;
+		span {
+			color: $accentColor;
 		}
 	}
 }
