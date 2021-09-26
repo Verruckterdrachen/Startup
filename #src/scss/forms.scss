@@ -24,10 +24,6 @@
 	text-align: center;
 	min-height: 50px;
 	padding: 0px 35px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
 	&_white {
 		font-weight: 700;
 		font-size: 16px;
