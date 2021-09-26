@@ -1,5 +1,35 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-
+.head-block {
+	text-align: center;
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: math.div(24, 20) * 100%;
+		@include adaptiv-value("padding-bottom", 30, 15, 1);
+		@include adaptiv-value("margin-bottom", 30, 15, 1);
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 50px;
+			height: 2px;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: $mainColor;
+		}
+	}
+	&__text {
+		font-family: "Roboto Slab";
+		font-size: 16px;
+		line-height: math.div(24, 16) * 100%;
+	}
+}
+.section {
+	@include adaptiv-value("padding-top", 100, 40, 1);
+	@include adaptiv-value("padding-bottom", 100, 50, 1);
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================

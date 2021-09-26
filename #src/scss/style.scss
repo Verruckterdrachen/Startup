@@ -88,6 +88,8 @@ body {
 	flex: 1 1 auto;
 	&__hero {
 	}
+	&__services {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -134,6 +136,62 @@ body {
 		font-size: 20px;
 		line-height: math.div(24, 20) * 100%;
 		margin: 0px 0px math.div(50, 20) * 1em 0px;
+	}
+}
+//====================================================================================================
+.services {
+	&__head {
+		@include adaptiv-value("margin-bottom", 70, 40, 1);
+	}
+	&__body {
+		display: grid;
+		gap: 40px;
+		@media (min-width: 600px) {
+			grid-template-columns: repeat(2, 1fr);
+			@media (min-width: 800px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+}
+.item-services {
+	text-align: center;
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+	&_active {
+		.item-services__image {
+			background-color: $accentColor;
+		}
+	}
+	@media (max-width: 800px) and (min-width: 600px) {
+		&:nth-child(3) {
+			grid-column: span 2;
+		}
+	}
+	&__image {
+		margin: 0px auto;
+		width: 90px;
+		height: 90px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		border: 2px solid #ddd;
+		@include adaptiv-value("margin-bottom", 30, 20, 1);
+	}
+	&__title {
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		line-height: math.div(24, 14) * 100%;
+		margin: 0px 0px math.div(24, 14) * 1em 0px;
+	}
+	&__text {
+		font-size: 14px;
+		font-family: "Roboto Slab";
+		line-height: math.div(24, 14) * 100%;
+		margin: 0px 0px math.div(24, 14) * 1em 0px;
 	}
 }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
